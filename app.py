@@ -22,15 +22,8 @@ bcrypt = Bcrypt(app)
 jwt = JWTManager(app)
 
 CORS(app)
-
-# --------------------
-# Register blueprints
-# --------------------
 app.register_blueprint(auth_bp)
 
-# --------------------
-# App entry
-# --------------------
 
 print(app.url_map)
 
