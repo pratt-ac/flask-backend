@@ -2,11 +2,15 @@ import random
 from .models import Property
 from db import db
 
+
 CITIES = {
     "Bangalore": ["Whitefield", "Indiranagar", "BTM", "Yelahanka"],
-    "Mumbai": ["Andheri", "Powai", "Bandra"],
-    "Chennai": ["Velachery", "OMR", "Anna Nagar"]
+    "Mumbai": ["Andheri", "Powai", "Bandra", "Borivali"],
+    "Delhi": ["Dwarka", "Saket", "Rohini", "Karol Bagh"],
+    "Chennai": ["Velachery", "OMR", "Anna Nagar", "Tambaram"],
+    "Hyderabad": ["Gachibowli", "Hitech City", "Kondapur", "Madhapur"]
 }
+
 
 THUMBNAILS = [
     "https://picsum.photos/400/300?random=1",
@@ -15,7 +19,7 @@ THUMBNAILS = [
     "https://picsum.photos/400/300?random=4",
 ]
 
-def seed_properties(count_per_city=10):
+def seed_properties(count_per_city=50):
     # Prevent reseeding on every restart
     if Property.query.first():
         return
