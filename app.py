@@ -23,7 +23,9 @@ from properties.routes import properties_bp
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-app.config["JWT_SECRET_KEY"] = "change-this-secret-key"
+import os
+app.config["JWT_SECRET_KEY"] = os.environ.get( "JWT_SECRET_KEY", "change-this-secret-key" )
+
 
 db.init_app(app)
 
