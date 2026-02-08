@@ -1,0 +1,16 @@
+# Virtual environment
+venv/
+
+#cache
+__pycache__/
+*.pyc
+
+#Db
+*.db
+
+# Environment variables
+.env
+
+# OS / editor junk
+.DS_Store
+.vscode/
