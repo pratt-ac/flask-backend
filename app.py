@@ -21,7 +21,6 @@ from properties.routes import properties_bp
 # App setup
 # --------------------
 app = Flask(__name__)
-
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["JWT_SECRET_KEY"] = "change-this-secret-key"
@@ -34,16 +33,8 @@ jwt = JWTManager(app)
 CORS(app)
 
 app.register_blueprint(properties_bp)
-
-
-# --------------------
-# Register blueprints
-# --------------------
 app.register_blueprint(auth_bp)
 
-# --------------------
-# App entry
-# --------------------
 
 print(app.url_map)
 
