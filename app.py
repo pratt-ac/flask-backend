@@ -7,6 +7,16 @@ from db import db
 from auth.routes import auth_bp
 from auth.models import User  # ensures table creation
 
+from properties.models import Property
+
+
+from properties.fakedata import seed_properties
+from properties.models import Property
+
+
+from properties.routes import properties_bp
+
+
 # --------------------
 # App setup
 # --------------------
@@ -23,6 +33,9 @@ jwt = JWTManager(app)
 
 CORS(app)
 
+app.register_blueprint(properties_bp)
+
+
 # --------------------
 # Register blueprints
 # --------------------
@@ -37,6 +50,7 @@ print(app.url_map)
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()
+        seed_properties()
     app.run(debug=True)
 
 
