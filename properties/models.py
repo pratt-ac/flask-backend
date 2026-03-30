@@ -24,3 +24,18 @@ class Property(db.Model):
         db.DateTime,
         server_default=db.func.now()
     )
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "bhk": self.bhk,
+            "price": self.price,
+            "sqft": self.sqft,
+            "city": self.city,
+            "locality": self.locality,
+            "lat": self.latitude,
+            "lng": self.longitude,
+            "thumbnail": self.thumbnail_url,
+            "description": self.description,
+        }
+    

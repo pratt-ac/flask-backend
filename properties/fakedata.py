@@ -12,11 +12,16 @@ CITIES = {
 }
 
 
+
 THUMBNAILS = [
-    "https://picsum.photos/400/300?random=1",
-    "https://picsum.photos/400/300?random=2",
-    "https://picsum.photos/400/300?random=3",
-    "https://picsum.photos/400/300?random=4",
+"https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=800&q=80",
+"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
+"https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
+"https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=800&q=80",
+"https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=800&q=80",
+"https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=80",
+"https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&q=80"
 ]
 
 def seed_properties(count_per_city=50):

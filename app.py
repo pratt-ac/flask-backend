@@ -15,11 +15,10 @@ from properties.models import Property
 
 
 from properties.routes import properties_bp
+from saved.routes import saved_bp
+from visits.routes import visits_bp
 
 
-# --------------------
-# App setup
-# --------------------
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
@@ -35,7 +34,8 @@ CORS(app)
 
 app.register_blueprint(properties_bp)
 app.register_blueprint(auth_bp)
-
+app.register_blueprint(saved_bp)
+app.register_blueprint(visits_bp, url_prefix="/api")
 
 print(app.url_map)
 
